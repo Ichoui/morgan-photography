@@ -19,5 +19,5 @@ function App(): React.JSX.Element {
     </div>
   );
 }
-
+// https://github.com/dromru/react-photoswipe-gallery
 export default App;
