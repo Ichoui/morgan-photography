@@ -1,43 +1,47 @@
 import React from 'react';
 import logo from './logo.svg';
 import './styles/components/_app.scss';
-import { PhotoGallery } from './components/Gallery/Gallery';
-import { Test } from './test';
+import { Test } from 'test';
+import { PhotoGallery } from '@components/Gallery/Gallery';
 
 const App = (): React.JSX.Element => {
   const images = [
     {
-      url: require('./assets/images/411A1692.jpg'),
+      url: './src/assets/images/411A1686.jpg',
     },
     {
-      url: require('./assets/images/411A1615.jpg'),
+      url: './src/assets/images/411A1692.jpg',
     },
     {
-      url: require('./assets/images/411A1686.jpg'),
+      url: './src/assets/images/411A1615.jpg',
     },
     {
-      url: require('./assets/images/411A1830.jpg'),
+      url: './src/assets/images/411A1686.jpg',
     },
     {
-      url: require('./assets/images/411A1829.jpg'),
-    },    {
-      url: require('./assets/images/411A1692.jpg'),
+      url: './src/assets/images/411A1830.jpg',
     },
     {
-      url: require('./assets/images/411A1615.jpg'),
+      url: './src/assets/images/411A1829.jpg',
     },
     {
-      url: require('./assets/images/411A1686.jpg'),
+      url: './src/assets/images/411A1692.jpg',
     },
     {
-      url: require('./assets/images/411A1830.jpg'),
+      url: './src/assets/images/411A1615.jpg',
     },
     {
-      url: require('./assets/images/411A1829.jpg'),
+      url: './src/assets/images/411A1686.jpg',
+    },
+    {
+      url: './src/assets/images/411A1830.jpg',
+    },
+    {
+      url: './src/assets/images/411A1829.jpg',
     },
   ];
 
-  const x = Test()
+  const x = Test();
   console.log(x);
 
   return (
