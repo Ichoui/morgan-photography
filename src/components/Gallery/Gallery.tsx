@@ -1,28 +1,28 @@
 import React from 'react';
 import 'photoswipe/style.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import { PhotoSwipeOptions } from 'photoswipe';
 
 interface Images {
   url: string;
-  width: number;
-  height: number;
 }
 
 export const PhotoGallery = (props: { galleryId: string; images: Images[] }): React.JSX.Element => {
-  const thumbnailStyle: React.CSSProperties = {
-    cursor: 'pointer',
-    objectFit: 'cover',
-    width: '150px',
-    height: '150px',
-  };
 
+    const options: PhotoSwipeOptions = {
+        preload: [3, 3],
+        mainClass: 'pspw-main-class',
+
+    }
   return (
-    <Gallery>
-      <div className='gallery'>
+    <Gallery options={options}>
+      <div className='Gallery'>
         {props.images.map((image, index) => (
-          <Item cropped key={index} original={image.url} width={image.width} height={image.height}>
+          <Item cropped key={index} original={image.url} width='1000' height='600'>
             {({ ref, open }) => (
-              <img style={thumbnailStyle} ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.url} alt={'ok'} />
+              <div className='Item'>
+                <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.url} alt={'image_' + index} />
+              </div>
             )}
           </Item>
         ))}

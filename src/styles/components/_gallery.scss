@@ -1,8 +1,22 @@
-img {
-  //display: none;
-}
-.gallery {
+.Gallery {
   display: grid;
-  grid-template-columns:repeat(3, 0fr);
+  grid-template-columns: repeat(3, 0fr);
   grid-gap: 10px;
+}
+
+.Item {
+  img {
+    cursor: pointer;
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.pspw-main-class {
+  //max-width: 900px;
+  .pswp__img {
+    //width: 800px !important;
+    height: auto !important;
+  }
 }
