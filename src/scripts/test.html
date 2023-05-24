@@ -1,0 +1,12 @@
+<input id="filepicker" type="file" multiple>
+<script type="module">
+    import exifr from '../../node_modules/exifr/dist/full.umd.cjs'
+    // import exifr from 'exifr' // => exifr/dist/full.umd.cjs
+
+    document.querySelector('#filepicker').addEventListener('change', async e => {
+        let files = Array.from(e.target.files)
+        let exifs = await Promise.all(files.map(exifr.parse))
+        let dates = exifs.map(exif => exif.DateTimeOriginal.toGMTString())
+        console.log(`${files.length} photos taken on:`, dates)
+    })
+</script>
