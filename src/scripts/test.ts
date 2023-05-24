@@ -34,10 +34,9 @@ fs.promises
     );
   })
   .then(() => {
-    console.log('----------------------------------------');
-
-    console.log(images);
+    // TODO : récupérer la width / length ... il y en aura besoin , ne serait-que pour les images prise verticalement (voir photo Ju à la pointe du Raz)
+  })
+  .then(() => {
     const json = JSON.stringify(images);
-      console.log(json);
-      fs.writeFile('src/scripts/bretagne-test.json', json, 'utf-8', () => null);
+    fs.writeFile('src/scripts/bretagne-test.json', json, 'utf-8', () => null);
   });
