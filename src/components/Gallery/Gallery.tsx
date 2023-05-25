@@ -2,7 +2,7 @@ import React from 'react';
 import 'photoswipe/style.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import { PhotoSwipeOptions } from 'photoswipe';
-import {Exif} from "interfaces/global.interface";
+import { Exif } from 'interfaces/global.interface';
 
 export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): React.JSX.Element => {
   const options: PhotoSwipeOptions = {
@@ -14,10 +14,10 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
     <Gallery options={options}>
       <div className='Gallery'>
         {props.images.map((image, index) => (
-          <Item cropped key={index} original={image.localUrl} width={6720} height={4480}>
+          <Item cropped key={index} original={image.localUrl} width={image.width} height={image.height}>
             {({ ref, open }) => (
               <div className='Item'>
-                <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.localUrl} alt={'bretagne-' + index} />
+                <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.localUrl} alt={image.identifier + '-' + index} />
               </div>
             )}
           </Item>

@@ -5,13 +5,14 @@ export interface ExposureTriangle {
 }
 
 export interface Exif {
+  identifier: string;
   localUrl: string;
   author: string;
   apn: string;
   lensModel: string;
   focale: number;
   date: Date;
-  width: number;
-  height: number;
+  width: number | undefined;
+  height: number | undefined;
   triangle: ExposureTriangle;
 }
