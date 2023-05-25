@@ -7,6 +7,7 @@ export interface ExposureTriangle {
 export interface Exif {
   identifier: string;
   localUrl: string;
+  thumbUrl: string;
   author: string;
   apn: string;
   lensModel: string;

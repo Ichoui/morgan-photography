@@ -15,7 +15,7 @@
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
     "prettier": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc",
-    "play:script": "ts-node --esm .\\src\\scripts\\test.ts"
+    "play:script": "ts-node --esm ./src/scripts/script-bretagne.exif.ts"
   },
   "dependencies": {
     "@types/jest": "^27.5.2",

@@ -5,8 +5,8 @@ import sizeOf from 'image-size';
 
 console.warn('SCRIPT IS RUNNING');
 
-const identifier = 'bretagne';
-const folder = './src/assets/bretagne/';
+const identifier = 'bretagne'; // Should be folder name too
+const folder = `./src/assets/${identifier}/`;
 const images: Exif[] = [];
 
 // https://stackoverflow.com/questions/71276453/get-all-images-exif-and-pass-to-route-as-object
@@ -15,16 +15,16 @@ fs.promises
   .then((filenames: string[]) => {
     return Promise.all(
       filenames.map(filename =>
-
         exifr
           .parse(folder + filename, true)
           .then(brutExif => {
             // console.log(brutExif);
             // console.log('NEXT ONE NEXT ONE NEXT ONE NEXT ONE');
             const dimensions = sizeOf(folder + filename);
-            images.push({
+            return {
               identifier,
               localUrl: folder + filename,
+              thumbUrl: folder + 'thumbnails/thumb-' + filename,
               author: brutExif.Artist,
               apn: brutExif.Model,
               lensModel: brutExif.LensModel,
@@ -37,17 +37,22 @@ fs.promises
                 exposureTime: brutExif.ExposureTime,
                 fValue: brutExif.FNumber,
               },
-            });
+            };
           })
-          .then(() => {
-              exifr.thumbnailUrl(folder + filename).then(e => console.log(e))
-
-            // Here try thumbnailUrl ?
+          .then(e => {
+            images.push(e);
+              // if (!fs.existsSync(folder + 'thumbnails')) {
+                fs.mkdirSync(folder + 'thumbnails');
+              // }
+            exifr
+              .thumbnail(e.localUrl)
+              .then((buffer: any) => fs.writeFile(folder + 'thumbnails/thumb-' + filename, buffer, 'utf-8', () => null))
+              .then(e => console.log(e));
           }),
       ),
     );
   })
   .then(() => {
     const json = JSON.stringify(images);
-    fs.writeFile('src/scripts/bretagne-test.json', json, 'utf-8', () => null);
+    fs.writeFile('src/scripts/bretagne/bretagne-test.json', json, 'utf-8', () => null);
   });

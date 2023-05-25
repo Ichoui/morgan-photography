@@ -14,10 +14,10 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
     <Gallery options={options}>
       <div className='Gallery'>
         {props.images.map((image, index) => (
-          <Item cropped key={index} original={image.localUrl} width={image.width} height={image.height}>
+          <Item cropped key={index} thumbnail={image.thumbUrl} original={image.localUrl} width={image.width} height={image.height}>
             {({ ref, open }) => (
               <div className='Item'>
-                <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.localUrl} alt={image.identifier + '-' + index} />
+                <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.thumbUrl} alt={image.identifier + '-' + index} />
               </div>
             )}
           </Item>
