@@ -31,8 +31,8 @@
     position: relative;
     width: 100%;
     margin-top: 120px; // header size + gap custom
-    //height: calc(100vh - 120px); // header + margin bottom
     height: 100%;
+    height: calc(100vh - 120px); // header + margin bottom
     .grid-block {
       display: grid;
       justify-content: center;
@@ -68,6 +68,35 @@
         position: fixed;
         top: 120px;
         left: 25px;
+      }
+      /* Fill button styling */
+      .btn-back {
+        font-size: 20px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        padding: 13px 50px 13px;
+        outline: 0;
+        border: 1px solid #61d9f9;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      .btn-back::after {
+        content: '';
+        background-color: #61d9f9;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+      }
+
+      .btn-back:hover::after {
+        top: 0;
+        left: 0;
       }
     }
   }
