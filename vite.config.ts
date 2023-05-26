@@ -23,5 +23,5 @@ export default defineConfig({
   build: {
     assetsInlineLimit: 50000,
   },
-  customLogger: logger,
+  // customLogger: logger,
 });

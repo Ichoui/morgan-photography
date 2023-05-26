@@ -1,6 +1,6 @@
 .Gallery {
     display: grid;
-    grid-template-columns: repeat(6, 0fr);
+    grid-template-columns: repeat(5, 0fr);
     grid-gap: 10px;
 }
 
@@ -8,8 +8,8 @@
   img {
     cursor: pointer;
     object-fit: cover;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height:130px;
   }
 }
 

@@ -9,7 +9,7 @@
     "start": "vite --open --host",
     "build:preview": "vite preview --open --host",
     "build": "tsc && vite build",
-    "deploy": "firebase deploy",
+    "firebase:deploy": "firebase deploy",
     "start:react": "react-scripts start",
     "build:react": "react-scripts build",
     "eject": "react-scripts eject",
