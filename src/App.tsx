@@ -1,26 +1,35 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './styles/components/_app.scss';
-import {PhotoGallery} from '@components/Gallery/Gallery';
-import {Exif} from 'interfaces/global.interface';
+import { PhotoGallery } from '@components/Gallery/Gallery';
+import { Exif } from 'interfaces/global.interface';
 
 const App = (): React.JSX.Element => {
-    const [images, setImages] = useState<Exif[]>([])
+  const [images, setImages] = useState<Exif[]>([]);
+  const obj = {
+    bretagne: {
+      identifier: 'bretagne',
+      jsonPath: './src/scripts/bretagne.json',
+    },
+    maple: {
+      identifier: 'maple',
+      jsonPath: './src/scripts/maple.json',
+    },
+  };
 
-  fetch('./src/scripts/bretagne-test.json')
-    .then(e => e.json())
-    .then(t => setImages(t));
+  fetch(obj.bretagne.jsonPath)
+    .then(res => res.json())
+    .then(exifs => setImages(exifs));
 
   return (
     <div className='App'>
-      <header className='App-header'>
+      <header>
         <img src={logo} className='App-logo' alt='logo' />
-        <PhotoGallery galleryId={'maple'} images={images} />
+        <div className='identifier'>{obj.bretagne.identifier}</div>
       </header>
+      <PhotoGallery galleryId={'maple'} images={images} />
     </div>
   );
 };
 
-
-// https://github.com/dromru/react-photoswipe-gallery
 export default App;

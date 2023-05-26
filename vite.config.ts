@@ -18,5 +18,10 @@ export default defineConfig({
     host: 'localhost',
     port: 8080,
   },
-  build: {}
+  build: {
+    assetsInlineLimit:50000,
+    // rollupOptions: {
+    //   external:
+    // }
+  }
 });
