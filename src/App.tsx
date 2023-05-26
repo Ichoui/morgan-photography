@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
+import apn from './appareil-photo.svg';
 import './styles/components/_app.scss';
 import { Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
@@ -41,8 +42,11 @@ const App = (): React.JSX.Element => {
   return (
     <div className='App'>
       <header>
-        <img src={logo} className='App-logo' alt='logo' />
-        <div className='identifier'>Morgan Photography</div>
+        <img src={logo} className='App-logo' alt='react-logo' />
+        <div className='site-name'>
+          <img src={apn} className='logo' alt='logo' />
+          <span>Morgan Photography</span>
+        </div>
       </header>
 
       <div className='container'>
@@ -59,9 +63,12 @@ const App = (): React.JSX.Element => {
 
         {isGallery && (
           <div className='wrapper-photo-gallery'>
-            <button className='btn-back' onClick={() => setIsGallery(false)}>
-              RETOUR{' '}
-            </button>
+            <div className='fixed-zone'>
+              <div className='gallery-name'>{galleryId}</div>
+              <button className='btn-back' onClick={() => setIsGallery(false)}>
+                RETOUR
+              </button>
+            </div>
             <PhotoGallery galleryId={galleryId} images={images} />
           </div>
         )}

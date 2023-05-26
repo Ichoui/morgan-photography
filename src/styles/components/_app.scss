@@ -16,16 +16,25 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
     position: fixed;
     top: 0;
     display: flex;
-    width: 100%;
     align-items: center;
+    width: 100%;
     justify-content: center;
     background-color: darken(#282c34, 3%);
     height: 100px;
     box-shadow: darken(#282c34, 3%) 0 2px 10px -3px;
     z-index: 777;
-    .identifier {
+    .site-name {
+      display: flex;
+      align-self: center;
       color: white;
       text-transform: capitalize;
+      span {
+        align-self: center;
+      }
+      .logo {
+        height: 60px;
+        margin-right: 15px;
+      }
     }
   }
 
@@ -69,42 +78,44 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
       height: $pageHeight;
       overflow-y: auto;
       overflow-x: hidden;
-      button.btn-back {
-        position: fixed;
-        //font-family: "Roboto Mono", monospace;
-        font-family: inherit;
 
+      .fixed-zone {
+        position: fixed;
         top: 120px;
         left: 25px;
-      }
-      /* Fill button styling */
-      .btn-back {
-        font-size: 20px;
-        font-weight: 200;
-        letter-spacing: 1px;
-        padding: 13px 50px 13px;
-        outline: 0;
-        border: 1px solid #61d9f9;
-        cursor: pointer;
-        position: relative;
-        background-color: rgba(0, 0, 0, 0);
-      }
 
-      .btn-back::after {
-        content: '';
-        background-color: #61d9f9;
-        width: 100%;
-        z-index: -1;
-        position: absolute;
-        height: 100%;
-        top: 7px;
-        left: 7px;
-        transition: 0.2s;
-      }
+        button.btn-back {
+          font-family: inherit;
+          font-size: 20px;
+          font-weight: 200;
+          letter-spacing: 1px;
+          padding: 13px 50px 13px;
+          outline: 0;
+          border: 1px solid #61d9f9;
+          cursor: pointer;
+          position: relative;
+          background-color: rgba(0, 0, 0, 0);
+          &:after {
+            content: '';
+            background-color: #61d9f9;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+          }
+          &:hover:after {
+            top: 0;
+            left: 0;
+          }
+        }
 
-      .btn-back:hover::after {
-        top: 0;
-        left: 0;
+        .gallery-name {
+          margin-bottom: 10px;
+          text-transform: capitalize;
+        }
       }
     }
   }
@@ -113,8 +124,8 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
     height: 75vmin;
     pointer-events: none;
     position: absolute;
-    left: -100px;
-    top: 0;
+    left: -200px;
+    top: 100px;
   }
 }
 
