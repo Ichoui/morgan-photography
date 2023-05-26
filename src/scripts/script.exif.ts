@@ -63,5 +63,5 @@ fs.promises
   })
   .then(() => {
     const json = JSON.stringify(arrayFormatedExif);
-    fs.writeFile(publicFolder + '/' + identifier + '.json', json, 'utf-8', () => null);
+    fs.writeFile(publicFolder + '/assets/jsonExif/' + identifier + '.json', json, 'utf-8', () => null);
   });

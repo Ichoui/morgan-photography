@@ -6,7 +6,7 @@
 > - Créer le dossier `./public/assets/photos/IDENTIFIER` et y ajouter les photos retouchées
 > - `npm run play:script`
 
-Un fichier `identifier.json` est créé dans `./public`, contenant l'exif de chaque photo, et un dossier `thumbnails` est créé à la racine de `./public/assets/photos/IDENTIFIER`
+Un fichier `identifier.json` est créé dans `./public/assets/jsonExif`, contenant l'exif de chaque photo, et un dossier `thumbnails` est créé à la racine de `./public/assets/photos/IDENTIFIER`
 
 ## Format des photos
 // TODO

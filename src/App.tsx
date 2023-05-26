@@ -1,52 +1,71 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './styles/components/_app.scss';
-import { PhotoGallery } from '@components/Gallery/Gallery';
 import { Exif } from 'interfaces/global.interface';
-import { Blocks } from 'components/Blocks/Blocks';
+import { PhotoGallery } from 'components/Gallery/Gallery';
+
+interface Block {
+  identifier: string;
+  jsonPath: string;
+  blockThumbnail: string;
+}
 
 const App = (): React.JSX.Element => {
   const [images, setImages] = useState<Exif[]>([]);
+  const [galleryId, setGalleryId] = useState<string>('');
+  const [isGallery, setIsGallery] = useState<boolean>(false);
 
-  const obj = [
+  const blocks: Block[] = [
     {
       identifier: 'bretagne',
-      jsonPath: 'bretagne.json',
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'bretagne.json',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
     },
     {
       identifier: 'maple',
-      jsonPath: 'maple.json',
-    },
-    {
-      identifier: 'maple',
-      jsonPath: 'maple.json',
+      jsonPath: 'assets/jsonExif/maple.json',
+      blockThumbnail: 'assets/photos/maple/thumbnails/thumb-411A1830.jpg',
     },
   ];
 
-  fetch(obj[0].jsonPath)
-    .then(res => res.json())
-    .then(exifs => setImages(exifs));
+  const selectGallery = (block: Block): void => {
+    fetch(block.jsonPath)
+      .then(res => res.json())
+      .then(exifs => {
+        setImages(exifs);
+        setGalleryId(block.identifier);
+        setIsGallery(true);
+      });
+  };
 
   return (
     <div className='App'>
       <header>
         <img src={logo} className='App-logo' alt='logo' />
-        <div className='identifier'>MorganNICOL Photography</div>
+        <div className='identifier'>Morgan Photography</div>
       </header>
-      <div className='container'>
-        <div className='block-container'>
-          {obj.map((o, index) => (
-            <Blocks key={index} identifier={o.identifier} images={images}></Blocks>
-          ))}
-        </div>
-      </div>
 
-      {/*<PhotoGallery galleryId={obj[0].identifier} images={images} />*/}
-      
+      <div className='container'>
+        {!isGallery && (
+          <div className='grid-block'>
+            {blocks.map((block, index) => (
+              <div className='block' key={index} onClick={() => selectGallery(block)}>
+                <img src={block.blockThumbnail} alt={block.identifier} />
+                <span> {block.identifier} </span>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {isGallery && (
+          <div className='wrapper-photo-gallery'>
+            <button className='btn-back' onClick={() => setIsGallery(false)}>
+              RETOUR{' '}
+            </button>
+            <PhotoGallery galleryId={galleryId} images={images} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
