@@ -9,11 +9,11 @@ const App = (): React.JSX.Element => {
   const obj = {
     bretagne: {
       identifier: 'bretagne',
-      jsonPath: './src/scripts/bretagne.json',
+      jsonPath: 'bretagne.json',
     },
     maple: {
       identifier: 'maple',
-      jsonPath: './src/scripts/maple.json',
+      jsonPath: 'maple.json',
     },
   };
 
