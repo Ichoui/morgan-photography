@@ -1,7 +1,7 @@
 .Gallery {
-    display: grid;
-    grid-template-columns: repeat(5, 0fr);
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 0fr);
+  grid-gap: 10px;
 }
 
 .Item {
@@ -9,7 +9,41 @@
     cursor: pointer;
     object-fit: cover;
     width: 200px;
-    height:130px;
+    height: 130px;
+  }
+}
+
+div[data-pswp-caption-type='below'] {
+  .exifs-values {
+    flex-direction: row;
+    > div {
+      margin-left: 10px;
+    }
+  }
+}
+div[data-pswp-caption-type='aside'] {
+  .exifs-values {
+    flex-direction: column;
+    > div {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.exifs-values {
+  display: flex;
+  align-items: flex-start;
+  > div {
+    display: flex;
+    align-items: center;
+  }
+  img {
+    width: 25px;
+    color: white;
+  }
+  span {
+    font-family: 'Oswald-SemiBold', serif;
+    margin-left: 5px;
   }
 }
 

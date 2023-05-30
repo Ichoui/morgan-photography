@@ -4,7 +4,6 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
 
 .App {
   background-color: #282c34;
-  //min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +29,7 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
       text-transform: capitalize;
       span {
         align-self: center;
+        font-family: Oswald-Bold, sans-serif;
       }
       .logo {
         height: 60px;
@@ -91,13 +91,13 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
           letter-spacing: 1px;
           padding: 13px 50px 13px;
           outline: 0;
-          border: 1px solid #61d9f9;
+          border: 1px solid shared.$reactBlue;
           cursor: pointer;
           position: relative;
           background-color: rgba(0, 0, 0, 0);
           &:after {
             content: '';
-            background-color: #61d9f9;
+            background-color: shared.$reactBlue;
             width: 100%;
             z-index: -1;
             position: absolute;

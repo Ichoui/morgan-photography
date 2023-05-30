@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import apn from './appareil-photo.svg';
 import './styles/components/_app.scss';
 import { Exif } from 'interfaces/global.interface';
@@ -42,7 +41,6 @@ const App = (): React.JSX.Element => {
   return (
     <div className='App'>
       <header>
-        <img src={logo} className='App-logo' alt='react-logo' />
         <div className='site-name'>
           <img src={apn} className='logo' alt='logo' />
           <span>Morgan Photography</span>
