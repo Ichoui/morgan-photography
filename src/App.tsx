@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import apn from './appareil-photo.svg';
+import logo from './logo.svg';
 import './styles/components/_app.scss';
 import { Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
@@ -42,8 +42,8 @@ const App = (): React.JSX.Element => {
     <div className='App'>
       <header>
         <div className='site-name'>
-          <img src={apn} className='logo' alt='logo' />
-          <span>Morgan Photography</span>
+          <img src={logo} className='logo' alt='logo' />
+          {/*<span>Morgan Photography</span>*/}
         </div>
       </header>
 

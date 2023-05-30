@@ -27,13 +27,14 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
       align-self: center;
       color: white;
       text-transform: capitalize;
-      span {
-        align-self: center;
-        font-family: Oswald-Bold, sans-serif;
-      }
+      //span {
+      //  align-self: center;
+      //  font-family: Oswald-Bold, sans-serif;
+      //}
       .logo {
-        height: 60px;
-        margin-right: 15px;
+        //height: 60px;
+        //margin-right: 15px;
+        height: 100px;
       }
     }
   }
