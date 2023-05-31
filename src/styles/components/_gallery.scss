@@ -1,25 +1,41 @@
-@use '../shared';
+@import '../shared';
 
 .Gallery {
   display: grid;
-  grid-template-columns: repeat(5, 0fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(2, [col-start] 45%);
+  justify-content: center;
+  grid-gap: 5px;
+  @media (min-width: $landscape-phone) {
+    grid-template-columns: repeat(3, 0fr);
+    grid-gap: 10px;
+  }
+
+  @media (min-width: $tablets) {
+    grid-template-columns: repeat(4, 0fr);
+  }
+
+  @media (min-width: $large) {
+    grid-template-columns: repeat(5, 0fr);
+  }
 }
 
 .Item {
-  border: 5px solid shared.$header;
+  border: 5px solid $header;
   overflow: hidden;
-  width: 200px;
+  cursor: pointer;
+  max-width: 200px;
   height: 130px;
+  @media (min-width: $phone) {
+    width: 12em;
+  }
+  @media (min-width: $tablets) {
+  width: 200px;
+  }
   img {
+    transition: transform 1s;
     &:hover {
       transform: scale(1.2);
     }
-    cursor: pointer;
-    object-fit: cover;
-    width: 200px;
-    height: 130px;
-    transition: transform 1s;
   }
 }
 
@@ -56,7 +72,3 @@ div[data-pswp-caption-type='aside'] {
     margin-left: 5px;
   }
 }
-
-
-
-

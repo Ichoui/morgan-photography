@@ -1,3 +1,6 @@
+/**********************/
+/******* Colors ******/
+/********************/
 $primary: blue;
 $secondary: white;
 $white: #dedede;
@@ -7,6 +10,30 @@ $background: #282c34;
 $header: darken($background, 3%);
 
 
+/***************************/
+/******* Mobile-First Breakpoints ******/
+/*************************/
+// X-Small devices (portrait phones, less than 576px)
+// No breakpoints
+
+// Small devices (landscape phones, 576px and up)
+$phone: 576px;
+
+// Medium devices (tablets, 768px and up)
+$landscape-phone: 768px;
+
+// Large devices (desktops, 992px and up)
+$tablets: 992px;
+
+// X-Large devices (large desktops, 1200px and up)
+$desktop: 1200px;
+
+// XX-Large devices (larger desktops, 1400px and up)
+$large: 1400px;
+
+/*************************/
+/******* All Fonts ******/
+/***********************/
 
 @font-face {
   font-family: 'Oswald-Bold';

@@ -28,6 +28,71 @@ const App = (): React.JSX.Element => {
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
+    },    {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
+    }, {
+      identifier: 'bretagne',
+      jsonPath: 'assets/jsonExif/bretagne.json',
+      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+      date: new Date('2023-05-01'),
     },
   ].sort((a, b): number => b.date.getTime() - a.date.getTime()); // Tri du plus récent au moins récent
 
@@ -42,6 +107,10 @@ const App = (): React.JSX.Element => {
     setGalleryId(id);
     setIsGallery(gallery);
   };
+  // TODO REGARDER LES EXIFS DE L'APP PHOTO ET LE SHUTTERSPEED + METTRE EN FRACTION + MODIF SCRIPT SI NECESSAIRE
+  // TODO scrollbar design plz
+  // EM for margin padding
+  // REM for text responsive
 
   return (
     <div className='App'>
