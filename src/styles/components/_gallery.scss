@@ -2,36 +2,37 @@
 
 .Gallery {
   display: grid;
-  grid-template-columns: repeat(2, [col-start] 45%);
+  grid-template-columns: auto auto;
   justify-content: center;
   grid-gap: 5px;
+  @media (min-width: $phone) {
+    grid-gap: 10px;
+  }
   @media (min-width: $landscape-phone) {
-    grid-template-columns: repeat(3, 0fr);
+    grid-template-columns: repeat(3, 200px);
     grid-gap: 10px;
   }
 
   @media (min-width: $tablets) {
-    grid-template-columns: repeat(4, 0fr);
+    grid-template-columns: repeat(4, 200px);
   }
 
   @media (min-width: $large) {
-    grid-template-columns: repeat(5, 0fr);
+    grid-gap: 15px;
+    grid-template-columns: repeat(5, 200px);
   }
 }
 
 .Item {
-  border: 5px solid $header;
+  border: 5px solid white;
   overflow: hidden;
   cursor: pointer;
-  max-width: 200px;
-  height: 130px;
-  @media (min-width: $phone) {
-    width: 12em;
-  }
-  @media (min-width: $tablets) {
-  width: 200px;
-  }
+
   img {
+    width: 200px;
+    height: 135px;
+    object-position: 50% 50%;
+    object-fit: cover;
     transition: transform 1s;
     &:hover {
       transform: scale(1.2);

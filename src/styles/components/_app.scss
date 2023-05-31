@@ -99,8 +99,8 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
       justify-content: flex-start;
 
       @media (min-width: $large) {
-        flex-direction: row;
-        justify-content: center;
+        //flex-direction: row;
+        //justify-content: center;
       }
 
       .fixed-zone {
