@@ -24,9 +24,10 @@
 }
 
 .Item {
-  border: 5px solid white;
+  border: 5px solid $header;
   overflow: hidden;
   cursor: pointer;
+    height: 135px; // fuck off mais obligatoire ainsi que celui dans l'img
 
   img {
     width: 200px;

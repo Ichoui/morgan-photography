@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
+import chevronBack from '/assets/images/chevron-left.svg';
 import 'styles/components/_app.scss';
 import { Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
@@ -28,67 +29,80 @@ const App = (): React.JSX.Element => {
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    },    {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
       date: new Date('2023-05-01'),
-    }, {
+    },
+    {
       identifier: 'bretagne',
       jsonPath: 'assets/jsonExif/bretagne.json',
       blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
@@ -141,7 +155,8 @@ const App = (): React.JSX.Element => {
             <div className='fixed-zone'>
               <div className='gallery-name'>{galleryId}</div>
               <button className='btn-back' onClick={() => exifState([], '', false)}>
-                RETOUR
+                <img src={chevronBack} alt='retour' />
+                <span>RETOUR</span>
               </button>
             </div>
             <PhotoGallery galleryId={galleryId} images={images} />

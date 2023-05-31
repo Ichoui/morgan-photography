@@ -9,7 +9,6 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  //font-size: calc(10px + 2vmin);
   color: $white;
 
   header {
@@ -39,8 +38,6 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
     height: $pageHeight;
     overflow: hidden;
 
-
-
     // HERE IS APP WITH EACH GALLERIES
     .grid-block {
       display: grid;
@@ -49,8 +46,10 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
       overflow-y: auto;
       overflow-x: hidden;
       height: calc(100vh - 120px);
-      grid-template-columns: repeat(2, 0fr);
 
+      @media (min-width: $landscape-phone) {
+        grid-template-columns: repeat(2, 0fr);
+      }
       @media (min-width: $tablets) {
         grid-template-columns: repeat(3, 0fr);
       }
@@ -98,11 +97,6 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
       flex-direction: column;
       justify-content: flex-start;
 
-      @media (min-width: $large) {
-        //flex-direction: row;
-        //justify-content: center;
-      }
-
       .fixed-zone {
         position: inherit;
         display: flex;
@@ -118,16 +112,31 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
           letter-spacing: 1px;
           outline: 0;
           cursor: pointer;
-          padding: 10px 15px;
-          font-size: 20px;
-          border: 5px solid $white;
+          padding: 10px 15px 10px;
+          font-size: 12px;
+          border: 3px solid $white;
           background-color: transparent;
           color: $white;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          left: 0;
+
+          @media (min-width: $large) {
+            position: relative;
+          }
+          img {
+            height: 15px;
+            margin-right: 5px;
+          }
         }
 
         .gallery-name {
+          position: relative;
           margin-bottom: 10px;
           text-transform: capitalize;
+          font-size: 32px;
+          font-family: 'Oswald-Medium', sans-serif;
         }
       }
     }
