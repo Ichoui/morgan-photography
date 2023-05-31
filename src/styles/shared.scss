@@ -1,8 +1,12 @@
 $primary: blue;
 $secondary: white;
-
-$background: red;
+$white: #dedede;
 $reactBlue: #61d9f9;
+
+$background: #282c34;
+$header: darken($background, 3%);
+
+
 
 @font-face {
   font-family: 'Oswald-Bold';
