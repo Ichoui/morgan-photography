@@ -43,11 +43,17 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
       grid-template-columns: repeat(3, 0fr);
       grid-gap: 25px;
       overflow: hidden;
+      .outer-block {
+        border: 1px solid shared.$white;
+      }
+      .border-block {
+        border: 15px solid shared.$header;
+      }
       .block {
         position: relative;
         width: 256px;
         height: 171px;
-        border: 15px solid shared.$header;
+        border: 1px solid shared.$white;
         cursor: pointer;
         object-fit: cover;
         display: flex;
@@ -64,6 +70,7 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
           }
         }
         span {
+          text-shadow: 0.1em 0.1em 0.05em #333;
           text-transform: uppercase;
           z-index: 12;
         }

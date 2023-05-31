@@ -3,11 +3,7 @@ import 'photoswipe/style.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import { PhotoSwipeOptions } from 'photoswipe';
 import { Exif } from 'interfaces/global.interface';
-import aperture from '../../../public/assets/test/aperture.svg';
-import lens from 'assets/test/052-lens-2.svg';
-import camera from 'assets/test/camera.svg';
-import iso from 'assets/test/iso.svg';
-import shutter from 'assets/test/timer.svg';
+import 'styles/components/_gallery.scss';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
