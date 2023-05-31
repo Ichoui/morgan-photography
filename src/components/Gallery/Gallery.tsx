@@ -61,7 +61,6 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
           <Item cropped key={index} thumbnail={image.thumbUrl} original={image.localUrl} width={image.width} height={image.height} data-exif={image}>
             {({ ref, open }) => (
               <div className='Item'>
-                <span className='pswp-caption-content'>Caption content</span>
                 <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.thumbUrl} alt={image.identifier + '-' + index} />
               </div>
             )}

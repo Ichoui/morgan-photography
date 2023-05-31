@@ -1,3 +1,5 @@
+@use '../shared';
+
 .Gallery {
   display: grid;
   grid-template-columns: repeat(5, 0fr);
@@ -5,11 +7,19 @@
 }
 
 .Item {
+  border: 5px solid shared.$header;
+  overflow: hidden;
+  width: 200px;
+  height: 130px;
   img {
+    &:hover {
+      transform: scale(1.2);
+    }
     cursor: pointer;
     object-fit: cover;
     width: 200px;
     height: 130px;
+    transition: transform 1s;
   }
 }
 

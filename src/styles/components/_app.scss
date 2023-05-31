@@ -1,6 +1,7 @@
 @use '../shared';
 
-$pageHeight: calc(100vh - 120px); // header + margin bottom
+$headerHeight: 120px;
+$pageHeight: calc(100vh - $headerHeight); // header + margin bottom
 
 .App {
   background-color: shared.$background;
@@ -34,7 +35,7 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
   .container {
     position: relative;
     width: 100%;
-    margin-top: 120px; // header size + gap custom
+    margin-top: $headerHeight; // header size + gap custom
     height: $pageHeight;
     overflow: hidden;
     .grid-block {
@@ -90,9 +91,7 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
         left: 25px;
 
         button.btn-back {
-          font-family: inherit;
           font-size: 20px;
-          font-weight: 200;
           letter-spacing: 1px;
           padding: 13px 50px 13px;
           outline: 0;
@@ -100,21 +99,28 @@ $pageHeight: calc(100vh - 120px); // header + margin bottom
           cursor: pointer;
           position: relative;
           background-color: rgba(0, 0, 0, 0);
-          &:after {
-            content: '';
-            background-color: shared.$white;
-            width: 100%;
-            z-index: -1;
-            position: absolute;
-            height: 100%;
-            top: 7px;
-            left: 7px;
-            transition: 0.2s;
-          }
-          &:hover:after {
-            top: 0;
-            left: 0;
-          }
+
+padding: 10px 15px;
+          font-size: 20px;
+          border: 5px solid shared.$white;
+          background-color: transparent;
+          color: shared.$white;
+
+          //&:after {
+          //  content: '';
+          //  background-color: shared.$white;
+          //  width: 100%;
+          //  z-index: -1;
+          //  position: absolute;
+          //  height: 100%;
+          //  top: 7px;
+          //  left: 7px;
+          //  transition: 0.2s;
+          //}
+          //&:hover:after {
+          //  top: 0;
+          //  left: 0;
+          //}
         }
 
         .gallery-name {
