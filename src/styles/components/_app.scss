@@ -43,7 +43,9 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
       justify-content: center;
       grid-template-columns: repeat(3, 0fr);
       grid-gap: 25px;
-      overflow: hidden;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: calc(100vh - 120px);
       .outer-block {
         border: 1px solid shared.$white;
       }
@@ -91,36 +93,14 @@ $pageHeight: calc(100vh - $headerHeight); // header + margin bottom
         left: 25px;
 
         button.btn-back {
-          font-size: 20px;
           letter-spacing: 1px;
-          padding: 13px 50px 13px;
           outline: 0;
-          border: 1px solid shared.$white;
           cursor: pointer;
-          position: relative;
-          background-color: rgba(0, 0, 0, 0);
-
-padding: 10px 15px;
+          padding: 10px 15px;
           font-size: 20px;
           border: 5px solid shared.$white;
           background-color: transparent;
           color: shared.$white;
-
-          //&:after {
-          //  content: '';
-          //  background-color: shared.$white;
-          //  width: 100%;
-          //  z-index: -1;
-          //  position: absolute;
-          //  height: 100%;
-          //  top: 7px;
-          //  left: 7px;
-          //  transition: 0.2s;
-          //}
-          //&:hover:after {
-          //  top: 0;
-          //  left: 0;
-          //}
         }
 
         .gallery-name {
