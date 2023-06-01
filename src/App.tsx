@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import chevronBack from '/assets/images/chevron-left.svg';
+import logo from './assets/svg/logo.svg';
+import chevronBack from './assets/svg/chevron-left.svg';
 import 'styles/components/_app.scss';
 import { Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
@@ -123,8 +123,8 @@ const App = (): React.JSX.Element => {
   };
   // TODO REGARDER LES EXIFS DE L'APP PHOTO ET LE SHUTTERSPEED + METTRE EN FRACTION + MODIF SCRIPT SI NECESSAIRE
   // TODO scrollbar design plz
-  // EM for margin padding
-  // REM for text responsive
+  // SCROLL JUSQU'EN BAS, Y A UN SOUCIS DE SIZE
+  // SIZE TEXTE BLOCKS
 
   return (
     <div className='App'>
@@ -152,12 +152,14 @@ const App = (): React.JSX.Element => {
 
         {isGallery && (
           <div className='wrapper-photo-gallery'>
-            <div className='fixed-zone'>
+            <div className='title-zone'>
+              <div className='left'>
+                <button className='btn-back' onClick={() => exifState([], '', false)}>
+                  <img src={chevronBack} alt='retour' />
+                  <span>RETOUR</span>
+                </button>
+              </div>
               <div className='gallery-name'>{galleryId}</div>
-              <button className='btn-back' onClick={() => exifState([], '', false)}>
-                <img src={chevronBack} alt='retour' />
-                <span>RETOUR</span>
-              </button>
             </div>
             <PhotoGallery galleryId={galleryId} images={images} />
           </div>

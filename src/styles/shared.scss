@@ -3,12 +3,19 @@
 /********************/
 $primary: blue;
 $secondary: white;
-$white: #dedede;
+$white: white;
 $reactBlue: #61d9f9;
 
 $background: #282c34;
 $header: darken($background, 3%);
 
+/**********************/
+/******* Sizes *******/
+/********************/
+
+$headerHeight: 100px;
+$titleZoneHeight: 50px;
+$pageHeight: calc(100vh - $headerHeight); // header
 
 /***************************/
 /******* Mobile-First Breakpoints ******/

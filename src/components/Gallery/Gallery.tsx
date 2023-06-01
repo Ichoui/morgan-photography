@@ -23,29 +23,29 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
       mobileLayoutBreakpoint: 700,
       captionContent: (slide: any) => {
         const exif: Exif = slide.data['data-exif'];
-        return `<div class='exifs-values'}>
+        return `<div class='exifs-values'>
                     <div>
-                        <img src='assets/test/aperture.svg' alt='aperture' />
+                        <img src='assets/svgExif/aperture.svg' alt='aperture' />
                             <span>F/${exif.triangle.fValue}</span><br>
 
                       </div>             
                     <div>
-                        <img src='assets/test/iso.svg' alt='iso' />
+                        <img src='assets/svgExif/iso.svg' alt='iso' />
                             <span>${exif.triangle.ISO}</span><br>
 
                       </div>            
                     <div>
-                        <img src='assets/test/shutter.svg' alt='shutterSpeed' />
+                        <img src='assets/svgExif/shutter.svg' alt='shutterSpeed' />
                             <span>${exif.triangle.exposureTime}s</span><br>
 
                       </div>
                      <div>
-                        <img src='assets/test/camera.svg' alt='lens' />
+                        <img src='assets/svgExif/camera.svg' alt='lens' />
                             <span>${exif.apn}</span><br>
 
                       </div>   
                     <div>
-                        <img src='assets/test/lens.svg' alt='apn' />
+                        <img src='assets/svgExif/lens.svg' alt='apn' />
                             <span>${exif.lensModel}</span><br>
 
                       </div>
