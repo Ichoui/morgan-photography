@@ -17,3 +17,10 @@ export interface Exif {
   height: number | undefined;
   triangle: ExposureTriangle;
 }
+
+export interface Block {
+  identifier: string;
+  jsonPath: string;
+  blockThumbnail: string;
+  date: Date;
+}

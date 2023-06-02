@@ -15,36 +15,38 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
     preload: [3, 3],
     mainClass: 'pspw-main-class',
     errorMsg: 'Cette photo ne peut pas se charger...',
-    maxZoomLevel: 2,
+    maxZoomLevel: 3,
   };
 
   const captionExif = (lightbox: any) => {
     return new PhotoSwipeDynamicCaption(lightbox, {
       type: 'auto',
-      mobileLayoutBreakpoint: 700,
+      mobileLayoutBreakpoint: 800,
       captionContent: (slide: any) => {
         const exif: Exif = slide.data['data-exif'];
         return `<div class='exifs-values'>
-                    <div>
+                    <div class="triangle">
+                      <div>
                         <img src='assets/svgExif/aperture.svg' alt='aperture' />
-                            <span>F/${exif.triangle.fValue}</span><br>
+                          <span>F/${exif.triangle.fValue}</span><br>
                       </div>             
-                    <div>
+                      <div>
                         <img src='assets/svgExif/iso.svg' alt='iso' />
-                            <span>${exif.triangle.ISO}</span><br>
+                          <span>${exif.triangle.ISO}</span><br>
                       </div>            
-                    <div>
+                      <div>
                         <img src='assets/svgExif/exposureTime.svg' alt='exposureTime' />
-                            <span>${exif.triangle.exposureTime}</span><br>
+                          <span>${exif.triangle.exposureTime}s</span><br>
                       </div>
-                     <div>
-                        <img src='assets/svgExif/camera.svg' alt='lens' />
-                            <span>${exif.apn}</span><br>
-                      </div>   
+                    </div>
                     <div>
-                        <img src='assets/svgExif/lens.svg' alt='apn' />
-                            <span>${exif.lensModel}</span><br>
-                      </div>
+                      <img src='assets/svgExif/camera.svg' alt='lens' />
+                        <span>${exif.apn}</span><br>
+                    </div>   
+                    <div>
+                      <img src='assets/svgExif/lens.svg' alt='apn' />
+                        <span>${exif.lensModel}</span><br>
+                    </div>
                 </div>`;
       },
     });

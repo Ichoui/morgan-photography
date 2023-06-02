@@ -2,113 +2,16 @@ import React, { useState } from 'react';
 import logo from './assets/svg/logo.svg';
 import chevronBack from './assets/svg/chevron-left.svg';
 import 'styles/components/_app.scss';
-import { Exif } from 'interfaces/global.interface';
+import { Block, Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
-
-interface Block {
-  identifier: string;
-  jsonPath: string;
-  blockThumbnail: string;
-  date: Date;
-}
+import { galleryBlocks } from 'scripts/gallery.exif';
 
 const App = (): React.JSX.Element => {
   const [images, setImages] = useState<Exif[]>([]);
   const [galleryId, setGalleryId] = useState<string>('');
   const [isGallery, setIsGallery] = useState<boolean>(false);
-
-  const blocks: Block[] = [
-    {
-      date: new Date('2028-12-01'),
-      identifier: 'maple',
-      jsonPath: 'assets/jsonExif/maple.json',
-      blockThumbnail: 'assets/photos/maple/thumbnails/thumb-411A1830.jpg',
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-    {
-      identifier: 'bretagne',
-      jsonPath: 'assets/jsonExif/bretagne.json',
-      blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
-      date: new Date('2023-05-01'),
-    },
-  ].sort((a, b): number => b.date.getTime() - a.date.getTime()); // Tri du plus récent au moins récent
+  const blocks: Block[] = galleryBlocks //
+    .sort((a, b): number => b.date.getTime() - a.date.getTime()); // Tri du plus récent au moins récent
 
   const selectGallery = (block: Block): void => {
     fetch(block.jsonPath)

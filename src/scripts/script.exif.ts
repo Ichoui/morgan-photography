@@ -11,7 +11,8 @@ import Fraction from 'fraction.js';
  * Change the identifier will generate a new identifier.json file
  *
  * */
-const identifier = 'bretagne'; // Should be folder name too
+const identifier = 'maple'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
 const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;
@@ -69,20 +70,18 @@ fs.promises
 
 function fraction(decimal: number): string {
   const rightCommaPart = decimal.toString().split('.')[1];
-  console.log(decimal);
-  console.log(rightCommaPart);
   if (rightCommaPart?.length > 1) {
     const fraction = new Fraction(decimal);
     // si 2 chiffres après la virgule -> en fraction
-    return fraction.n + '/' + fraction.d + 's';
+    return fraction.n + '/' + fraction.d;
   } else {
     if (decimal >= 1) {
       // Les valeurs qui ont plus de 1 sec d'expositions
-      return decimal + 's';
+      return decimal.toString();
     } else {
       // sinon on met en second classique genre 0"8s
       const leftCommaPart = decimal.toString().split('.')[0];
-      return leftCommaPart + '"' + rightCommaPart + 's';
+      return leftCommaPart + '"' + rightCommaPart;
     }
   }
 }
