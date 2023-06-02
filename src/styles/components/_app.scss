@@ -1,7 +1,5 @@
 @import '../shared';
 
-
-
 .App {
   background-color: $background;
   display: flex;
@@ -127,6 +125,12 @@
             img {
               height: 15px;
               margin-right: 5px;
+            }
+            span {
+              display: none;
+              @media (min-width: $phone) {
+                display: block;
+              }
             }
           }
         }
