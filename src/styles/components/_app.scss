@@ -53,6 +53,7 @@
       }
       .outer-block {
         border: 1px solid $white;
+        height: fit-content;
       }
       .border-block {
         border: 15px solid $header;
