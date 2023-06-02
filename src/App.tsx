@@ -121,10 +121,8 @@ const App = (): React.JSX.Element => {
     setGalleryId(id);
     setIsGallery(gallery);
   };
-  // TODO REGARDER LES EXIFS DE L'APP PHOTO ET LE SHUTTERSPEED + METTRE EN FRACTION + MODIF SCRIPT SI NECESSAIRE
+
   // TODO scrollbar design plz
-  // SCROLL JUSQU'EN BAS, Y A UN SOUCIS DE SIZE
-  // SIZE TEXTE BLOCKS
 
   return (
     <div className='App'>

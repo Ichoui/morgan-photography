@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import exifr from 'exifr';
 import { Exif } from 'interfaces/global.interface';
 import sizeOf from 'image-size';
+import Fraction from 'fraction.js';
 
 /**
  * USAGE :
@@ -10,7 +11,7 @@ import sizeOf from 'image-size';
  * Change the identifier will generate a new identifier.json file
  *
  * */
-const identifier = 'maple'; // Should be folder name too
+const identifier = 'bretagne'; // Should be folder name too
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
 const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;
@@ -28,7 +29,7 @@ fs.promises
     return Promise.all(
       filenames.map(filename =>
         exifr
-          .parse(publicFolder + path + filename, true)
+          .parse(publicFolder + path + filename)
           .then(brutExif => {
             // console.log(brutExif);
             // console.log('NEXT ONE NEXT ONE NEXT ONE NEXT ONE');
@@ -46,7 +47,7 @@ fs.promises
               height: dimensions.height,
               triangle: {
                 ISO: brutExif.ISO,
-                exposureTime: brutExif.ExposureTime,
+                exposureTime: fraction(brutExif.ExposureTime),
                 fValue: brutExif.FNumber,
               },
             };
@@ -65,3 +66,23 @@ fs.promises
     const json = JSON.stringify(arrayFormatedExif);
     fs.writeFile(publicFolder + '/assets/jsonExif/' + identifier + '.json', json, 'utf-8', () => null);
   });
+
+function fraction(decimal: number): string {
+  const rightCommaPart = decimal.toString().split('.')[1];
+  console.log(decimal);
+  console.log(rightCommaPart);
+  if (rightCommaPart?.length > 1) {
+    const fraction = new Fraction(decimal);
+    // si 2 chiffres après la virgule -> en fraction
+    return fraction.n + '/' + fraction.d + 's';
+  } else {
+    if (decimal >= 1) {
+      // Les valeurs qui ont plus de 1 sec d'expositions
+      return decimal + 's';
+    } else {
+      // sinon on met en second classique genre 0"8s
+      const leftCommaPart = decimal.toString().split('.')[0];
+      return leftCommaPart + '"' + rightCommaPart + 's';
+    }
+  }
+}

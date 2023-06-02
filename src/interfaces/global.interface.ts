@@ -1,6 +1,6 @@
 export interface ExposureTriangle {
   ISO: number;
-  exposureTime: number;
+  exposureTime: string;
   fValue: number;
 }
 

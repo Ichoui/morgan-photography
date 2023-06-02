@@ -15,7 +15,8 @@ $header: darken($background, 3%);
 
 $headerHeight: 100px;
 $titleZoneHeight: 50px;
-$pageHeight: calc(100vh - $headerHeight); // header
+$containerHeight: calc(100vh - $headerHeight);
+$galleryHeight: calc($containerHeight - $titleZoneHeight);
 
 /***************************/
 /******* Mobile-First Breakpoints ******/
