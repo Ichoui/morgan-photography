@@ -11,8 +11,9 @@ import Fraction from 'fraction.js';
  * Change the identifier will generate a new identifier.json file
  *
  * */
-const identifier = 'bretagne'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+const identifier = 'maple'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
 const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;

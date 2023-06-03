@@ -13,7 +13,7 @@ export const galleryBlocks: Block[] = [
   {
     identifier: 'maple',
     jsonPath: 'assets/jsonExif/maple.json',
-    blockThumbnail: 'assets/photos/maple/thumbnails/thumb-411A1830.jpg',
+    blockThumbnail: 'assets/photos/maple/thumbnails/thumb-1.jpg',
     date: new Date('2094-09-19'),
   },
   {

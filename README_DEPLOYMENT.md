@@ -10,8 +10,23 @@
 Un fichier `identifier.json` est créé dans `./public/assets/jsonExif`, contenant l'exif de chaque photo, et un dossier `thumbnails` est créé à la racine de `./public/assets/photos/IDENTIFIER`
 
 
-## Format des photos
-Les images sont en 1920*1080, 300ppp (pixels par pouces)
+## Format des photos / Tips Lightroom
+
+> Les images sont en 1920*1080, 300ppp (pixels par pouces)
+
+**Tip :** Un fichier `.CR3` (.raw) n'est jamais modifié, il est accompagné par un fichier `.xmp` qui stocke toutes les retouchées effectuées sur lightroom.
+
+**Tip :** CTRL+A sur une image pour sélectionner la galerie > clic droit > Exporter > (Non-)Retouchées et ainsi exporter toutes les images au format souhaité
+
+**Tip :** CTRA+A sur une image pour sélectionner la galerie > clic droit > Métadonnées > Enregistrer les métadonnées dans le(s) fichier(s) : A faire lorsque que session de retouche terminée
+
+**Tip :** Supprimer les images jugées mauvaises avant la post-prod Lightroom pour gagner du temps (depuis Windows Explorer / Appareil Photo)
+
+**Tip :** Un voyage = un dossier, contenant les fichiers .CR3, un dossier Retouchées / Non-retouchées
+
+
+
+
 
 ## Firebase
 > - `npm run firebase:deploy`
