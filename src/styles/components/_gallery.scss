@@ -18,7 +18,6 @@
 
   @media (min-width: $landscape-phone) {
     grid-template-columns: repeat(3, 200px);
-    grid-gap: 10px;
   }
 
   @media (min-width: $tablets) {
@@ -26,16 +25,19 @@
   }
 
   @media (min-width: $large) {
-    grid-gap: 15px;
     grid-template-columns: repeat(5, 200px);
   }
 }
 
 .Item {
   border: 5px solid $header;
+  border-radius: $radius;
   overflow: hidden;
   cursor: pointer;
   height: 135px; // fuck off mais obligatoire ainsi que celui dans l'img
+  &:last-child {
+    margin-bottom: 10px;
+  }
 
   img {
     width: 200px;

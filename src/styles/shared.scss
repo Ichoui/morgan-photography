@@ -7,7 +7,7 @@ $white: white;
 $reactBlue: #61d9f9;
 
 $background: #282c34;
-$header: darken($background, 3%);
+$header: darken($background, 6%);
 
 /**********************/
 /******* Sizes *******/
@@ -17,6 +17,7 @@ $headerHeight: 100px;
 $titleZoneHeight: 50px;
 $containerHeight: calc(100dvh - $headerHeight);
 $galleryHeight: calc($containerHeight - $titleZoneHeight);
+$radius: 10px;
 
 
 :root {
