@@ -15,8 +15,13 @@ $header: darken($background, 3%);
 
 $headerHeight: 100px;
 $titleZoneHeight: 50px;
-$containerHeight: calc(100vh - $headerHeight);
+$containerHeight: calc(100dvh - $headerHeight);
 $galleryHeight: calc($containerHeight - $titleZoneHeight);
+
+
+:root {
+  --viewport-height: 100%;
+}
 
 /***************************/
 /******* Mobile-First Breakpoints ******/
