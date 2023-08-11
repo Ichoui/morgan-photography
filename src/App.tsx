@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import logo from './assets/svg/logo.svg';
-import chevronBack from './assets/svg/chevron-left.svg';
 import 'styles/components/_app.scss';
 import { Block, Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
@@ -25,13 +23,11 @@ const App = (): React.JSX.Element => {
     setIsGallery(gallery);
   };
 
-  // TODO scrollbar design plz
-
   return (
     <div className='App'>
       <header>
         <div className='site-name'>
-          <img src={logo} className='logo' alt='logo' />
+          <img src='/assets/svg/logo.svg' className='logo' alt='logo' />
         </div>
       </header>
 
@@ -56,7 +52,7 @@ const App = (): React.JSX.Element => {
             <div className='title-zone'>
               <div className='left'>
                 <button className='btn-back' onClick={() => exifState([], '', false)}>
-                  <img src={chevronBack} alt='retour' />
+                  <img src='/assets/svg/chevron-left.svg' alt='retour' />
                   <span>RETOUR</span>
                 </button>
               </div>
