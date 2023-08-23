@@ -1,7 +1,5 @@
 import { Block } from 'interfaces/global.interface';
 
-
-
 /**
  *
  * @identifier nom de l'album
@@ -17,6 +15,12 @@ export const galleryBlocks: Block[] = [
     date: new Date('2094-09-19'),
   },
   {
+    identifier: 'divers',
+    jsonPath: 'assets/jsonExif/divers.json',
+    blockThumbnail: 'assets/photos/divers/thumbnails/thumb-411A2778.jpg',
+    date: new Date('2090-09-19'),
+  },
+  {
     identifier: 'bretagne',
     jsonPath: 'assets/jsonExif/bretagne.json',
     blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
@@ -26,5 +30,5 @@ export const galleryBlocks: Block[] = [
     jsonPath: 'assets/jsonExif/gavarnie.json',
     blockThumbnail: 'assets/photos/gavarnie/thumbnails/thumb-411A1874.jpg',
     date: new Date('2023-04-01'),
-  },
+  }
 ];
