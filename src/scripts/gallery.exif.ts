@@ -26,9 +26,9 @@ export const galleryBlocks: Block[] = [
     blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
     date: new Date('2023-05-01'),
   },  {
-    identifier: 'gavarnie',
-    jsonPath: 'assets/jsonExif/gavarnie.json',
-    blockThumbnail: 'assets/photos/gavarnie/thumbnails/thumb-411A1874.jpg',
+    identifier: 'pyrenees',
+    jsonPath: 'assets/jsonExif/pyrenees.json',
+    blockThumbnail: 'assets/photos/pyrenees/thumbnails/thumb-411A1874.jpg',
     date: new Date('2023-04-01'),
   }
 ];
