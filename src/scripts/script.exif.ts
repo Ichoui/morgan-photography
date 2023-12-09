@@ -12,7 +12,7 @@ import Fraction from 'fraction.js';
  *
  * */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-const identifier = 'pyrenees'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+const identifier = 'vestlandet'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
@@ -36,6 +36,7 @@ fs.promises
             // console.log(brutExif);
             // console.log('NEXT ONE NEXT ONE NEXT ONE NEXT ONE');
             const dimensions = sizeOf(publicFolder + path + filename);
+            const imageName = filename?.length > 0 ? filename.split('_')[1]?.split('.')[0] : '';
             return {
               identifier,
               localUrl: path + filename,
@@ -47,6 +48,7 @@ fs.promises
               date: brutExif.CreateDate,
               width: dimensions.width,
               height: dimensions.height,
+              imageName,
               triangle: {
                 ISO: brutExif.ISO,
                 exposureTime: fraction(brutExif.ExposureTime),

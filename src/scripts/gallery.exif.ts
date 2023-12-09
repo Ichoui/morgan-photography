@@ -10,25 +10,37 @@ import { Block } from 'interfaces/global.interface';
 export const galleryBlocks: Block[] = [
   {
     identifier: 'maple',
+    name: 'Maple',
     jsonPath: 'assets/jsonExif/maple.json',
     blockThumbnail: 'assets/photos/maple/thumbnails/thumb-1.jpg',
     date: new Date('2094-09-19'),
   },
   {
     identifier: 'divers',
+    name: 'Divers',
     jsonPath: 'assets/jsonExif/divers.json',
     blockThumbnail: 'assets/photos/divers/thumbnails/thumb-411A2778.jpg',
     date: new Date('2090-09-19'),
   },
   {
     identifier: 'bretagne',
+    name: 'Bretagne',
     jsonPath: 'assets/jsonExif/bretagne.json',
     blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
     date: new Date('2023-05-01'),
-  },  {
+  },
+  {
     identifier: 'pyrenees',
+    name: 'Pyrénées',
     jsonPath: 'assets/jsonExif/pyrenees.json',
     blockThumbnail: 'assets/photos/pyrenees/thumbnails/thumb-411A1874.jpg',
     date: new Date('2023-04-01'),
-  }
+  },
+  {
+    identifier: 'vestlandet',
+    name: 'Vestlandet Fjørds',
+    jsonPath: 'assets/jsonExif/vestlandet.json',
+    blockThumbnail: 'assets/photos/vestlandet/thumbnails/thumb-03122023-411A4796-HDR_Ålesund.jpg',
+    date: new Date('2023-12-01'),
+  },
 ];

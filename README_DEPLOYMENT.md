@@ -39,4 +39,4 @@ Attention : Les déploiements peuvent être un peu long.
 
 > - `npm run build` : pour générer le build
 > - `npm run build:preview` : pour tester si le build est fonctionnel en local
-> - `npm run firebase:deploy` : déploiement en prod. Lire la partie sur Firebase.
+> - `npm run firebase:deploy` : déploiement en prod. Lire la partie du README sur Firebase.

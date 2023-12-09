@@ -55,6 +55,7 @@ div[data-pswp-caption-type='below'] {
   .exifs-values {
     flex-direction: row;
     .triangle > div:not(:first-child),
+    .device > div:not(:first-child),
     div:not(:first-child) {
       margin-left: 10px;
     }
@@ -67,7 +68,7 @@ div[data-pswp-caption-type='mobile'] {
     > div:not(:first-child) {
       margin-left: 10px;
     }
-    .triangle {
+    .triangle, .device {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -81,10 +82,10 @@ div[data-pswp-caption-type='mobile'] {
 div[data-pswp-caption-type='aside'] {
   .exifs-values {
     flex-direction: column;
-    .triangle {
+    .triangle, .device {
       flex-direction: column;
     }
-    .triangle > div,
+    .triangle > div, .device > div,
     div:not(:first-child) {
       margin-bottom: 10px;
     }
@@ -94,7 +95,7 @@ div[data-pswp-caption-type='aside'] {
 .exifs-values {
   display: flex;
   //align-items: flex-start;
-  .triangle {
+  .triangle, .device {
     display: flex;
     flex-direction: row;
     > div {
@@ -102,12 +103,29 @@ div[data-pswp-caption-type='aside'] {
       align-items: center;
     }
   }
+  .name {
+    font-weight: bold;
+  }
   img {
-    width: 25px;
     color: white;
+    width: 12px;
+    @media (min-width: $tablets) {
+      width: 22px;
+    }
+
+    @media (min-width: $desktop) {
+      width: 26px;
+    }
   }
   span {
     font-family: 'Oswald-SemiBold', serif;
     margin-left: 5px;
+    font-size: 10px;
+    @media (min-width: $tablets) {
+      font-size: 12px;
+    }
+    @media (min-width: $desktop) {
+      font-size: 16px;
+    }
   }
 }

@@ -16,6 +16,7 @@ export interface Exif {
   width: number | undefined;
   height: number | undefined;
   triangle: ExposureTriangle;
+  imageName?: string;
 }
 
 export interface Block {
@@ -23,4 +24,5 @@ export interface Block {
   jsonPath: string;
   blockThumbnail: string;
   date: Date;
+  name: string;
 }

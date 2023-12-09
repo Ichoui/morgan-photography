@@ -18,6 +18,8 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
     maxZoomLevel: 3,
   };
 
+  props.images.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
   const captionExif = (lightbox: any) => {
     return new PhotoSwipeDynamicCaption(lightbox, {
       type: 'auto',
@@ -39,15 +41,26 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
                           <span>${exif.triangle.exposureTime}s</span><br>
                       </div>
                     </div>
-                    <div>
-                      <img src='assets/svgExif/camera.svg' alt='lens' />
-                        <span>${exif.apn}</span><br>
-                    </div>   
-                    <div>
-                      <img src='assets/svgExif/lens.svg' alt='apn' />
-                        <span>${exif.lensModel}</span><br>
+                    <div class="device">
+                      <div>
+                        <img src='assets/svgExif/focale.svg' alt='focale' />
+                          <span>${exif.focale}mm</span><br>
+                      </div>
+                      <div>
+                        <img src='assets/svgExif/camera.svg' alt='lens' />
+                          <span>${exif.apn}</span><br>
+                      </div>   
+                      <div>
+                        <img src='assets/svgExif/lens.svg' alt='apn' />
+                          <span>${exif.lensModel}</span><br>
+                      </div>
                     </div>
-                </div>`;
+                    <div class="name">
+                        <div>
+                          ${exif.imageName ?? ''}
+                        </div>
+                    </div>
+                 </div>`;
       },
     });
   };

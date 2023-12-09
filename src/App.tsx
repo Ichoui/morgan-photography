@@ -7,6 +7,7 @@ import { galleryBlocks } from 'scripts/gallery.exif';
 const App = (): React.JSX.Element => {
   const [images, setImages] = useState<Exif[]>([]);
   const [galleryId, setGalleryId] = useState<string>('');
+  const [galleryName, setGalleryName] = useState<string>('');
   const [isGallery, setIsGallery] = useState<boolean>(false);
   const blocks: Block[] = galleryBlocks //
     .sort((a, b): number => b.date.getTime() - a.date.getTime()); // Tri du plus récent au moins récent
@@ -14,13 +15,14 @@ const App = (): React.JSX.Element => {
   const selectGallery = (block: Block): void => {
     fetch(block.jsonPath)
       .then(res => res.json())
-      .then(exifs => exifState(exifs, block.identifier, true));
+      .then(exifs => exifState(exifs, block.identifier, true, block.name));
   };
 
-  const exifState = (exifs: Exif[], id: string, gallery: boolean) => {
+  const exifState = (exifs: Exif[], id: string, gallery: boolean, name: string): void => {
     setImages(exifs);
     setGalleryId(id);
     setIsGallery(gallery);
+    setGalleryName(name)
   };
 
   return (
@@ -39,7 +41,7 @@ const App = (): React.JSX.Element => {
                 <div className='border-block'>
                   <div className='block'>
                     <img src={block.blockThumbnail} alt={block.identifier} />
-                    <span> {block.identifier} </span>
+                    <span> {block.name} </span>
                   </div>
                 </div>
               </div>
@@ -51,12 +53,12 @@ const App = (): React.JSX.Element => {
           <div className='wrapper-photo-gallery'>
             <div className='title-zone'>
               <div className='left'>
-                <button className='btn-back' onClick={() => exifState([], '', false)}>
+                <button className='btn-back' onClick={() => exifState([], '', false, '')}>
                   <img src='/assets/svg/chevron-left.svg' alt='retour' />
                   <span>RETOUR</span>
                 </button>
               </div>
-              <div className='gallery-name'>{galleryId}</div>
+              <div className='gallery-name'>{galleryName}</div>
             </div>
             <PhotoGallery galleryId={galleryId} images={images} />
           </div>
