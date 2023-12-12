@@ -12,7 +12,7 @@ import Fraction from 'fraction.js';
  *
  * */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-const identifier = 'vestlandet'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+const identifier = 'newfoundland23'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;

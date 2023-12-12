@@ -27,7 +27,7 @@ export default defineConfig({
       },
     }),
   ],
-  css: { modules: { localsConvention: 'camelCase' } },
+  css: { modules: { localsConvention: 'camelCase' }, devSourcemap: true },
   base: '/',
   publicDir: 'public',
   server: {

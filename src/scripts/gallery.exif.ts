@@ -37,6 +37,13 @@ export const galleryBlocks: Block[] = [
     date: new Date('2023-04-01'),
   },
   {
+    identifier: 'newfoundland23',
+    name: 'Terre-Neuve et les Maritimes',
+    jsonPath: 'assets/jsonExif/newfoundland23.json',
+    blockThumbnail: 'assets/photos/newfoundland23/thumbnails/thumb-13092023-411A3310_Bonavista, NL.jpg',
+    date: new Date('2023-09-01'),
+  },
+  {
     identifier: 'vestlandet',
     name: 'Vestlandet Fjørds',
     jsonPath: 'assets/jsonExif/vestlandet.json',

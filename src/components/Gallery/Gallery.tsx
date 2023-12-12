@@ -15,10 +15,17 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
     preload: [3, 3],
     mainClass: 'pspw-main-class',
     errorMsg: 'Cette photo ne peut pas se charger...',
+    secondaryZoomLevel: 2,
     maxZoomLevel: 3,
   };
 
-  props.images.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  if (props.galleryId === 'maple' || props.galleryId === 'divers') {
+    // life images sorted DESC
+    props.images.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  } else {
+    // travel images sorted ASC
+    props.images.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  }
 
   const captionExif = (lightbox: any) => {
     return new PhotoSwipeDynamicCaption(lightbox, {

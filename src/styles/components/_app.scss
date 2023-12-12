@@ -87,7 +87,12 @@
           text-shadow: 0.1em 0.1em 0.05em #333;
           text-transform: uppercase;
           z-index: 12;
+          font-size: 1.2rem;
+          text-align: center;
+
+          @media (min-width: $large) {
           font-size: 1.5rem;
+          }
         }
       }
     }
@@ -154,25 +159,25 @@
 }
 
 //// Other shit!
-
-.App-logo {
-  height: 75vmin;
-  pointer-events: none;
-  position: absolute;
-  left: -200px;
-  top: 100px;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+//
+//.App-logo {
+//  height: 75vmin;
+//  pointer-events: none;
+//  position: absolute;
+//  left: -200px;
+//  top: 100px;
+//}
+//@media (prefers-reduced-motion: no-preference) {
+//  .App-logo {
+//    animation: App-logo-spin infinite 20s linear;
+//  }
+//}
+//
+//@keyframes App-logo-spin {
+//  from {
+//    transform: rotate(0deg);
+//  }
+//  to {
+//    transform: rotate(360deg);
+//  }
+//}
