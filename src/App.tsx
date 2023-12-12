@@ -52,13 +52,13 @@ const App = (): React.JSX.Element => {
         {isGallery && (
           <div className='wrapper-photo-gallery'>
             <div className='title-zone'>
-              <div className='left'>
+              {/*<div className='left'>*/}
                 <button className='btn-back' onClick={() => exifState([], '', false, '')}>
                   <img src='/assets/svg/chevron-left.svg' alt='retour' />
                   <span>RETOUR</span>
                 </button>
-              </div>
-              <div className='gallery-name'>{galleryName}</div>
+              {/*</div>*/}
+              <span className='gallery-name'>{galleryName}</span>
             </div>
             <PhotoGallery galleryId={galleryId} images={images} />
           </div>

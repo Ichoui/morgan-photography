@@ -91,7 +91,7 @@
           text-align: center;
 
           @media (min-width: $large) {
-          font-size: 1.5rem;
+            font-size: 1.5rem;
           }
         }
       }
@@ -104,6 +104,7 @@
       justify-content: flex-start;
 
       .title-zone {
+        align-items: center;
         position: fixed;
         display: flex;
         align-self: center;
@@ -113,35 +114,37 @@
         background: $background;
         z-index: 50;
 
-        &:after {
-          content: '';
-          flex: 1;
-        }
-        .left {
+        button.btn-back {
+          position: absolute;
           display: flex;
-          align-items: center;
-          flex: 1;
+          outline: 0;
+          cursor: pointer;
+          font-size: 0.8rem;
+          border: 3px solid $white;
+          background-color: transparent;
+          color: $white;
+          z-index: 50;
+          height: 35px;
+          width: 35px;
+          padding: 0.6em 0.6em 0.6em 0.5em;
+          left: 0;
 
-          button.btn-back {
-            display: flex;
-            outline: 0;
-            cursor: pointer;
-            padding: 0.6em 0.7em 0.6em;
-            font-size: 0.8rem;
-            border: 3px solid $white;
-            background-color: transparent;
-            color: $white;
-            margin-left: 25px;
-
-            img {
-              height: 15px;
+          @media (min-width: $landscape-phone) {
+            left: 25px;
+            height: 35px;
+            width: 100px;
+            padding: 0.6em;
+          }
+          img {
+            height: 15px;
+            @media (min-width: $landscape-phone) {
               margin-right: 5px;
             }
-            span {
-              display: none;
-              @media (min-width: $phone) {
-                display: block;
-              }
+          }
+          span {
+            display: none;
+            @media (min-width: $landscape-phone) {
+              display: block;
             }
           }
         }
@@ -149,9 +152,11 @@
         .gallery-name {
           position: relative;
           text-transform: capitalize;
-          font-size: 2rem;
+          font-size: 1.4rem;
           font-family: 'Oswald-Medium', sans-serif;
-          height: 100%;
+          @media (min-width: $landscape-phone) {
+          font-size: 2rem;
+          }
         }
       }
     }
