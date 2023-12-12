@@ -61,6 +61,8 @@ div[data-pswp-caption-type='below'] {
     }
     .name > div {
       margin-left: 15px;
+      text-align: center;
+      padding: 0 15px;
     }
   }
 }
@@ -71,7 +73,8 @@ div[data-pswp-caption-type='mobile'] {
     > div:not(:first-child) {
       margin-left: 10px;
     }
-    .triangle, .device {
+    .triangle,
+    .device {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -79,18 +82,27 @@ div[data-pswp-caption-type='mobile'] {
         display: flex;
       }
     }
+    .name {
+      text-align: center;
+      padding: 0 15px;
+    }
   }
 }
 
 div[data-pswp-caption-type='aside'] {
   .exifs-values {
     flex-direction: column;
-    .triangle, .device {
+    .triangle,
+    .device {
       flex-direction: column;
     }
-    .triangle > div, .device > div,
+    .triangle > div,
+    .device > div,
     div:not(:first-child) {
       margin-bottom: 10px;
+    }
+    .name {
+      max-width: 75%;
     }
   }
 }
@@ -98,7 +110,8 @@ div[data-pswp-caption-type='aside'] {
 .exifs-values {
   width: 100%;
   display: flex;
-  .triangle, .device {
+  .triangle,
+  .device {
     display: flex;
     flex-direction: row;
     > div {
@@ -108,9 +121,6 @@ div[data-pswp-caption-type='aside'] {
   }
   .name {
     font-family: 'Oswald-Bold', serif;
-    text-align: center;
-    padding: 0 15px;
-
     @media (min-width: $tablets) {
       font-size: 1.5rem;
     }
