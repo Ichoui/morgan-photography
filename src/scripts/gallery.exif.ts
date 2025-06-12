@@ -33,7 +33,7 @@ export const galleryBlocks: Block[] = [
     identifier: 'pyrenees',
     name: 'Pyrénées',
     jsonPath: 'assets/jsonExif/pyrenees.json',
-    blockThumbnail: 'assets/photos/pyrenees/thumbnails/thumb-411A1874.jpg',
+    blockThumbnail: 'assets/photos/pyrenees/thumbnails/thumb-411A1874_city=null_place=Gavarnie, Pyrénées_region=null_pays=France.jpg',
     date: new Date('2023-04-01'),
   },
   {

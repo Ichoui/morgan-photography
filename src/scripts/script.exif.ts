@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import exifr from 'exifr';
-import { Exif } from 'interfaces/global.interface';
+// import { Exif } from 'interfaces/global.interface';
 import sizeOf from 'image-size';
 import Fraction from 'fraction.js';
 
@@ -12,12 +12,13 @@ import Fraction from 'fraction.js';
  *
  * */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-const identifier = 'newfoundland23'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+const identifier = 'pyrenees'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
 const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;
-const arrayFormatedExif: Exif[] = [];
+const arrayFormatedExif: any[] = [];
+const manuelAddToTitle = '';
 
 // Remove folder with thumbnails if we regenerate script
 if (fs.existsSync(publicFolder + pathThumbnails)) {
@@ -36,7 +37,62 @@ fs.promises
             // console.log(brutExif);
             // console.log('NEXT ONE NEXT ONE NEXT ONE NEXT ONE');
             const dimensions = sizeOf(publicFolder + path + filename);
-            const imageName = filename?.length > 0 ? filename.split('_')[1]?.split('.')[0] : '';
+            let imageName = '';
+            let extension = '';
+            if (filename.split('_').length > 2) {
+              // New Format : 411A1850_city=null_place=Gavarnie, Pyrénées_region=null_pays=France.jpg
+              const parts = filename.split('_');
+              // const cityPart = parts.find(part => part.startsWith('city='));
+              // const placePart = parts.find(part => part.startsWith('place='));
+              // const regionPart = parts.find(part => part.startsWith('region='));
+              // const countryPart = parts.find(part => part.startsWith('pays='));
+              // const city = cityPart ? cityPart.split('=')[1] : '';
+              // const place = placePart ? placePart.split('=')[1] : '';
+              // const region = regionPart ? regionPart.split('=')[1] : '';
+              // const country = countryPart ? countryPart.split('=')[1] : '';
+
+              // const city = parts.find(part => part.startsWith('city='))?.split('=')[1] || '';
+              // const place = parts.find(part => part.startsWith('place='))?.split('=')[1] || '';
+              // const region = parts.find(part => part.startsWith('region='))?.split('=')[1] || '';
+              // const country = parts.find(part => part.startsWith('pays='))?.split('=')[1].split('.')[0] || '';
+              // const extension = parts.find(part => part.startsWith('pays='))?.split('=')[1].split('.')[1] || '';
+              // console.log(parts, place, city, region, country);
+              // const separator = (place !== 'null' || city !== 'null') && (region !== 'null' || country !== null) ? '|' : '';
+              // imageName = `${place !== 'null' ? place + ',' : ''}${city !== 'null' ? city + ' ' : ''}${separator}${
+              //   region !== 'null' ? region + ', ' : ''
+              // }${country !== 'null' ? country + '' : ''}`.trim();
+
+              const getValue = (key: string) => {
+                const match = parts.find(part => part.startsWith(`${key}=`));
+                const value = match?.split('=')[1];
+                return value && value !== 'null' ? value : '';
+              };
+
+              const place = getValue('place');
+              const city = getValue('city');
+              const region = getValue('region');
+
+              const pays = getValue('pays');
+              const [country = '', ext = ''] = pays ? pays.split('.') : [];
+
+              // Première partie : "place, city"
+              const location = [place, city].filter(Boolean).join(', ');
+
+              // Deuxième partie : "region, country"
+              const area = [region, country].filter(Boolean).join(', ');
+
+              // Ajouter un séparateur si les deux parties existent
+               imageName = [location, area].filter(Boolean).join(' | ');
+               extension = ext;
+            } else {
+              // Old format : 11092023-411A3116_St John's, NL.jpg OR 11092023-411A3116.jpg (without place)
+              if (manuelAddToTitle.length > 0) {
+              }
+              imageName = filename?.length > 0 ? filename.split('_')[1]?.split('.')[0] : '';
+            }
+
+            console.log(filename, filename.split('_').length, imageName, extension);
+            // return;
             return {
               identifier,
               localUrl: path + filename,
@@ -56,7 +112,8 @@ fs.promises
               },
             };
           })
-          .then((exif: Exif) => {
+          .then((exif: any) => {
+            // return;
             arrayFormatedExif.push(exif);
             fs.mkdirSync(publicFolder + pathThumbnails, { recursive: true });
             exifr
