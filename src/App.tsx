@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import 'styles/components/_app.scss';
 import { Block, Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
 import { galleryBlocks } from 'scripts/gallery.exif';
+
 
 const App = (): React.JSX.Element => {
   const [images, setImages] = useState<Exif[]>([]);

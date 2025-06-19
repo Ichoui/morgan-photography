@@ -23,6 +23,13 @@ export const galleryBlocks: Block[] = [
     date: new Date('2090-09-19'),
   },
   {
+    identifier: 'cyclisme',
+    name: 'Cyclisme',
+    jsonPath: 'assets/jsonExif/cyclisme.json',
+    blockThumbnail: 'assets/photos/cyclisme/thumbnails/thumb-411A5441_city=Montréal_place=Julian, Matthews, Pogacar, De Lie, Girmay_region=null_pays=Canada.jpg',
+    date: new Date('2024-09-15'),
+  },
+  {
     identifier: 'bretagne',
     name: 'Bretagne',
     jsonPath: 'assets/jsonExif/bretagne.json',
@@ -47,7 +54,7 @@ export const galleryBlocks: Block[] = [
     identifier: 'vestlandet',
     name: 'Vestlandet Fjørds',
     jsonPath: 'assets/jsonExif/vestlandet.json',
-    blockThumbnail: 'assets/photos/vestlandet/thumbnails/thumb-03122023-411A4796-HDR_Ålesund.jpg',
+    blockThumbnail: 'assets/photos/vestlandet/thumbnails/thumb-03122023-411A4796-HDR_city=null_place=Ålesund Islands_region=null_pays=Norvège.jpg',
     date: new Date('2023-12-01'),
   },
 ];

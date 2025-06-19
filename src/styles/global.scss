@@ -1,0 +1,32 @@
+@use 'sass:color';
+
+@use 'variables';
+@use 'scrollbar';
+
+@use 'components/gallery';
+@use 'components/app';
+
+$headerHeight: 100px;
+$titleZoneHeight: 50px;
+$containerHeight: calc(100dvh - $headerHeight);
+
+body {
+  margin: 0;
+  font-family: Oswald-Regular, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}

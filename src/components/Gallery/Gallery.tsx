@@ -3,7 +3,6 @@ import 'photoswipe/style.css';
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import { PhotoSwipeOptions } from 'photoswipe';
 import { Exif } from 'interfaces/global.interface';
-import 'styles/components/_gallery.scss';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -11,6 +10,7 @@ import PhotoSwipeDynamicCaption from 'photoswipe-dynamic-caption-plugin';
 import 'photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css';
 
 export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): React.JSX.Element => {
+  const { galleryId, images } = props;
   const options: PhotoSwipeOptions = {
     preload: [3, 3],
     mainClass: 'pspw-main-class',
@@ -19,21 +19,16 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
     maxZoomLevel: 3,
   };
 
-  if (props.galleryId === 'maple' || props.galleryId === 'divers') {
+  if (galleryId === 'maple' || galleryId === 'divers') {
     // life images sorted DESC
-    props.images.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    images.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   } else {
     // travel images sorted ASC
-    props.images.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    images.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   }
-
-  const captionExif = (lightbox: any) => {
-    return new PhotoSwipeDynamicCaption(lightbox, {
-      type: 'auto',
-      mobileLayoutBreakpoint: 800,
-      captionContent: (slide: any) => {
-        const exif: Exif = slide.data['data-exif'];
-        return `<div class='exifs-values'>
+  const captionContent = (slide: any) => {
+    const exif: Exif = slide.data['data-exif'];
+    return `<div class='exifs-values'>
                     <div class="triangle">
                       <div>
                         <img src='assets/svgExif/aperture.svg' alt='aperture' />
@@ -68,18 +63,24 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
                         </div>
                     </div>
                  </div>`;
-      },
+  };
+
+  const captionExif = (lightbox: any) => {
+    return new PhotoSwipeDynamicCaption(lightbox, {
+      type: 'auto',
+      mobileLayoutBreakpoint: 800,
+      captionContent,
     });
   };
 
   return (
     <Gallery options={options} plugins={captionExif}>
       <div className='Gallery'>
-        {props.images.map((image, index) => (
+        {images.map((image, index) => (
           <Item cropped key={index} thumbnail={image.thumbUrl} original={image.localUrl} width={image.width} height={image.height} data-exif={image}>
             {({ ref, open }) => (
               <div className='Item'>
-                <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src={image.thumbUrl} alt={image.identifier + '-' + index} />
+                <img ref={ref} onClick={open} src={image.thumbUrl} alt={`${image.identifier}-${index}`} />
               </div>
             )}
           </Item>
