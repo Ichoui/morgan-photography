@@ -30,6 +30,13 @@ export const galleryBlocks: Block[] = [
     date: new Date('2024-09-15'),
   },
   {
+    identifier: 'mont-st-michel',
+    name: 'Mont Saint Michel',
+    jsonPath: 'assets/jsonExif/mont-st-michel.json',
+    blockThumbnail: 'assets/photos/mont-st-michel/thumbnails/thumb-411A5137.jpg',
+    date: new Date('2024-03-13'),
+  },
+  {
     identifier: 'bretagne',
     name: 'Bretagne',
     jsonPath: 'assets/jsonExif/bretagne.json',

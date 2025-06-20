@@ -12,13 +12,15 @@ import { imageSizeFromFile } from 'image-size/fromFile';
  *
  * */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-const identifier = 'cyclisme'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+const identifier = 'mont-st-michel'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
 const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;
 const arrayFormatedExif: any[] = [];
-const manuelAddToTitle = '';
+
+// _city=null_place=null_region=null_pays=null
+const manualAddToTitle = '_city=null_place=Mont Saint Michel_region=null_pays=France';
 
 // Remove folder with thumbnails if we regenerate script
 if (fs.existsSync(publicFolder + pathThumbnails)) {
@@ -38,9 +40,10 @@ fs.promises
             const dimensions = await imageSizeFromFile(publicFolder + path + filename);
             let imageName = '';
             let extension = '';
-            if (filename.split('_').length > 2) {
+            if (filename.split('_').length > 2 || manualAddToTitle.length > 0) {
               // New Format : 411A1850_city=null_place=Gavarnie, Pyrénées_region=null_pays=France.jpg
-              const parts = filename.split('_');
+              const parts = (manualAddToTitle.length > 0 ? 'placeholder' + manualAddToTitle : filename).split('_');
+              console.log(parts);
               const getValue = (key: string) => {
                 const match = parts.find(part => part.startsWith(`${key}=`));
                 const value = match?.split('=')[1];
@@ -65,8 +68,6 @@ fs.promises
               extension = ext;
             } else {
               // Old format : 11092023-411A3116_St John's, NL.jpg OR 11092023-411A3116.jpg (without place)
-              if (manuelAddToTitle.length > 0) {
-              }
               imageName = filename?.length > 0 ? filename.split('_')[1]?.split('.')[0] : '';
             }
             // console.log(brutExif,filename, imageName, extension);

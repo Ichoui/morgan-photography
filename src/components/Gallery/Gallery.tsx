@@ -57,6 +57,11 @@ export const PhotoGallery = (props: { galleryId: string; images: Exif[] }): Reac
                           <span>${exif.lensModel}</span><br>
                       </div>
                     </div>
+                    <div class="date">
+                        <div>
+                            ${new Date(exif.date).toLocaleDateString(navigator.language, { dateStyle: 'medium' }) ?? ''}
+                        </div>
+                    </div>
                     <div class="name">
                         <div>
                           ${exif.imageName ?? ''}
