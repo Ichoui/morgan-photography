@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Block, Exif } from 'interfaces/global.interface';
 import { PhotoGallery } from 'components/Gallery/Gallery';
 import { galleryBlocks } from 'scripts/gallery.exif';
-
+import SceneComponent from 'components/3D/scene';
 
 const App = (): React.JSX.Element => {
   const [images, setImages] = useState<Exif[]>([]);
@@ -22,7 +22,7 @@ const App = (): React.JSX.Element => {
     setImages(exifs);
     setGalleryId(id);
     setIsGallery(gallery);
-    setGalleryName(name)
+    setGalleryName(name);
   };
 
   return (
@@ -34,6 +34,13 @@ const App = (): React.JSX.Element => {
       </header>
 
       <div className='container'>
+        {!isGallery && (
+          <div className='grid-cubes'>
+            <SceneComponent blocks={blocks} selectGallery={selectGallery} />
+          </div>
+        )}
+        {/*
+
         {!isGallery && (
           <div className='grid-block'>
             {blocks.map((block, index) => (
@@ -48,15 +55,16 @@ const App = (): React.JSX.Element => {
             ))}
           </div>
         )}
+*/}
 
         {isGallery && (
           <div className='wrapper-photo-gallery'>
             <div className='title-zone'>
               {/*<div className='left'>*/}
-                <button className='btn-back' onClick={() => exifState([], '', false, '')}>
-                  <img src='/assets/svg/chevron-left.svg' alt='retour' />
-                  <span>RETOUR</span>
-                </button>
+              <button className='btn-back' onClick={() => exifState([], '', false, '')}>
+                <img src='/assets/svg/chevron-left.svg' alt='retour' />
+                <span>RETOUR</span>
+              </button>
               {/*</div>*/}
               <span className='gallery-name'>{galleryName}</span>
             </div>

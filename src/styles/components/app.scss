@@ -36,6 +36,11 @@
     height: $containerHeight;
     overflow: hidden;
 
+    // HERE IS APP WITH ALL CUBES
+    .grid-cubes {
+      width: 100%;
+      height: 100%;
+    }
     // HERE IS APP WITH EACH GALLERIES
     .grid-block {
       display: grid;
