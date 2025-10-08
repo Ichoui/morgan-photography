@@ -13,6 +13,7 @@ export const galleryBlocks: Block[] = [
     name: 'Maple',
     jsonPath: 'assets/jsonExif/maple.json',
     blockThumbnail: 'assets/photos/maple/thumbnails/thumb-1.jpg',
+    blockHD: 'assets/photos/maple/1.jpg',
     date: new Date('2094-09-19'),
   },
   {
@@ -20,6 +21,7 @@ export const galleryBlocks: Block[] = [
     name: 'Divers',
     jsonPath: 'assets/jsonExif/divers.json',
     blockThumbnail: 'assets/photos/divers/thumbnails/thumb-411A2778.jpg',
+    blockHD: 'assets/photos/divers/411A2778.jpg',
     date: new Date('2090-09-19'),
   },
   {
@@ -27,6 +29,7 @@ export const galleryBlocks: Block[] = [
     name: 'Cyclisme',
     jsonPath: 'assets/jsonExif/cyclisme.json',
     blockThumbnail: 'assets/photos/cyclisme/thumbnails/thumb-411A5441_city=Montréal_place=Julian, Matthews, Pogacar, De Lie, Girmay_region=null_pays=Canada.jpg',
+    blockHD: 'assets/photos/cyclisme/411A5441_city=Montréal_place=Julian, Matthews, Pogacar, De Lie, Girmay_region=null_pays=Canada.jpg',
     date: new Date('2024-09-15'),
   },
   {
@@ -34,6 +37,7 @@ export const galleryBlocks: Block[] = [
     name: 'Mont Saint Michel',
     jsonPath: 'assets/jsonExif/mont-st-michel.json',
     blockThumbnail: 'assets/photos/mont-st-michel/thumbnails/thumb-411A5137.jpg',
+    blockHD: 'assets/photos/mont-st-michel/411A5137.jpg',
     date: new Date('2024-03-13'),
   },
   {
@@ -41,6 +45,7 @@ export const galleryBlocks: Block[] = [
     name: 'Bretagne',
     jsonPath: 'assets/jsonExif/bretagne.json',
     blockThumbnail: 'assets/photos/bretagne/thumbnails/thumb-411A2002.jpg',
+    blockHD: 'assets/photos/bretagne/411A2002.jpg',
     date: new Date('2023-05-01'),
   },
   {
@@ -48,20 +53,21 @@ export const galleryBlocks: Block[] = [
     name: 'Pyrénées',
     jsonPath: 'assets/jsonExif/pyrenees.json',
     blockThumbnail: 'assets/photos/pyrenees/thumbnails/thumb-411A1874_city=null_place=Gavarnie, Pyrénées_region=null_pays=France.jpg',
+    blockHD: 'assets/photos/pyrenees/411A1874_city=null_place=Gavarnie, Pyrénées_region=null_pays=France.jpg',
     date: new Date('2023-04-01'),
   },
   {
     identifier: 'newfoundland23',
     name: 'Terre-Neuve et les Maritimes',
     jsonPath: 'assets/jsonExif/newfoundland23.json',
-    blockThumbnail: 'assets/photos/newfoundland23/thumbnails/thumb-13092023-411A3310_Bonavista, NL.jpg',
+    blockThumbnail: 'assets/photos/newfoundland23/13092023-411A3310_Bonavista, NL.jpg',
     date: new Date('2023-09-01'),
   },
   {
     identifier: 'vestlandet',
     name: 'Vestlandet Fjørds',
     jsonPath: 'assets/jsonExif/vestlandet.json',
-    blockThumbnail: 'assets/photos/vestlandet/thumbnails/thumb-03122023-411A4796-HDR_city=null_place=Ålesund Islands_region=null_pays=Norvège.jpg',
+    blockThumbnail: 'assets/photos/vestlandet/03122023-411A4796-HDR_city=null_place=Ålesund Islands_region=null_pays=Norvège.jpg',
     date: new Date('2023-12-01'),
   },
 ];

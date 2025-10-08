@@ -23,6 +23,7 @@ export interface Block {
   identifier: string;
   jsonPath: string;
   blockThumbnail: string;
+  blockHD?: string;
   date: Date;
   name: string;
 }

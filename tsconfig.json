@@ -18,6 +18,7 @@
     "jsx": "react-jsx",
     "sourceMap": true,
     "baseUrl": "./",
+    "types": ["@react-three/fiber", "three"],
     "paths": {
       "*": ["src/*"],
       "@components/*": ["src/components/*"],
