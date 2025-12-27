@@ -12,7 +12,10 @@ Un fichier `identifier.json` est créé dans `./public/assets/jsonExif`, contena
 
 ## Format des photos / Tips Lightroom
 
-> Les images sont en 1920*1080, 300ppp (pixels par pouces)
+Update décembre 2025 : 
+> Les images sont en 2048px côté long dans LR, qualité 80% pour réduire les tailles
+---
+> Old : Les images sont en 1920*1080, 300ppp (pixels par pouces)
 
 **Tip :** Un fichier `.CR3` (.raw) n'est jamais modifié, il est accompagné par un fichier `.xmp` qui stocke toutes les retouchées effectuées sur lightroom.
 

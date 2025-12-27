@@ -64,4 +64,11 @@ export const galleryBlocks: Block[] = [
     blockThumbnail: 'assets/photos/vestlandet/thumbnails/thumb-03122023-411A4796-HDR_city=null_place=Ålesund Islands_region=null_pays=Norvège.jpg',
     date: new Date('2023-12-01'),
   },
+  {
+    identifier: 'saint-georges',
+    name: 'Saint-Georges',
+    jsonPath: 'assets/jsonExif/saint-georges.json',
+    blockThumbnail: 'assets/photos/saint-georges/thumbnails/thumb-411A6636.jpg',
+    date: new Date('2025-12-26'),
+  },
 ];

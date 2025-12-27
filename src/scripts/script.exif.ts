@@ -12,7 +12,7 @@ import { imageSizeFromFile } from 'image-size/fromFile';
  *
  * */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-const identifier = 'mont-st-michel'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+const identifier = 'saint-georges'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
@@ -20,7 +20,7 @@ const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;
 const arrayFormatedExif: any[] = [];
 
 // _city=null_place=null_region=null_pays=null
-const manualAddToTitle = '_city=null_place=Mont Saint Michel_region=null_pays=France';
+const manualAddToTitle = '_city=null_place=Saint-Georges_region=Beauce_pays=null';
 
 // Remove folder with thumbnails if we regenerate script
 if (fs.existsSync(publicFolder + pathThumbnails)) {
