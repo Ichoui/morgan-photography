@@ -12,7 +12,7 @@ import { imageSizeFromFile } from 'image-size/fromFile';
  *
  * */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-const identifier = 'saint-georges'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
+const identifier = 'cyclisme'; // Must be the folder name too (public/assets/photos/IDENTIFIER)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const publicFolder = './public';
 const path = `/assets/photos/${identifier}/`;
@@ -20,7 +20,8 @@ const pathThumbnails = `/assets/photos/${identifier}/thumbnails/`;
 const arrayFormatedExif: any[] = [];
 
 // _city=null_place=null_region=null_pays=null
-const manualAddToTitle = '_city=null_place=Saint-Georges_region=Beauce_pays=null';
+// const manualAddToTitle = '_city=null_place=Saint-Georges_region=Beauce_pays=null';
+const manualAddToTitle = '';
 
 // Remove folder with thumbnails if we regenerate script
 if (fs.existsSync(publicFolder + pathThumbnails)) {
@@ -40,9 +41,9 @@ fs.promises
             const dimensions = await imageSizeFromFile(publicFolder + path + filename);
             let imageName = '';
             let extension = '';
-            if (filename.split('_').length > 2 || manualAddToTitle.length > 0) {
+            if (filename.split('_').length > 2 || manualAddToTitle?.length > 0) {
               // New Format : 411A1850_city=null_place=Gavarnie, Pyrénées_region=null_pays=France.jpg
-              const parts = (manualAddToTitle.length > 0 ? 'placeholder' + manualAddToTitle : filename).split('_');
+              const parts = (manualAddToTitle?.length > 0 ? 'placeholder' + manualAddToTitle : filename).split('_');
               console.log(parts);
               const getValue = (key: string) => {
                 const match = parts.find(part => part.startsWith(`${key}=`));
